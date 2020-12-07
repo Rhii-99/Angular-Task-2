@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'empTask2';
+  title = 'Task2';
+  constructor(private router: Router) {}
+
+  add(id: number) {
+    this.router.navigate(['/add_edit', id]);
+  }
 }
